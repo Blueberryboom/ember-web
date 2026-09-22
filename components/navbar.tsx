@@ -1,0 +1,8 @@
+'use client';
+import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
+import { useState } from 'react';
+import { Logo } from './logo';
+import { siteConfig } from '@/lib/config';
+const links = [{ href:'/', label:'Home' }, { href:'/docs', label:'Documentation' }, { href:'/status', label:'Status' }, { href:'/pricing', label:'Pricing' }];
+export function Navbar() { const [open,setOpen]=useState(false); return <header className="sticky top-0 z-50 border-b border-white/10 bg-[#100d0d]/85 backdrop-blur"><nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5"><Logo /><div className="hidden items-center gap-1 md:flex">{links.map(x=><Link key={x.href} href={x.href} className="nav-link">{x.label}</Link>)}<a href={siteConfig.githubUrl} className="nav-link" target="_blank" rel="noreferrer">GitHub</a></div><div className="hidden md:block"><Link href="/invite" className="button-primary">Invite Ember</Link></div><button aria-label="Toggle navigation menu" aria-expanded={open} onClick={()=>setOpen(!open)} className="rounded-md p-2 text-zinc-200 focus-visible:ring-2 focus-visible:ring-ember-400 md:hidden">{open?<X size={22}/>:<Menu size={22}/>}</button></nav>{open&&<div className="border-t border-white/10 bg-[#151111] px-5 pb-5 md:hidden">{links.map(x=><Link onClick={()=>setOpen(false)} key={x.href} href={x.href} className="block py-3 text-sm text-zinc-300">{x.label}</Link>)}<a className="block py-3 text-sm text-zinc-300" href={siteConfig.githubUrl}>GitHub</a><Link onClick={()=>setOpen(false)} href="/invite" className="button-primary mt-2 w-full">Invite Ember</Link></div>}</header> }
