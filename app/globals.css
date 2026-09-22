@@ -2,10 +2,6 @@
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   color-scheme: dark;
 }
@@ -33,19 +29,19 @@ body {
 
 @layer components {
   .nav-link {
-    @apply rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-ember-400;
+    @apply rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400;
   }
 
   .button-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-ember-500 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-ember-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#100d0d];
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#100d0d];
   }
 
   .button-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/[.03] px-4 py-2.5 text-sm font-medium text-zinc-200 transition hover:border-white/25 hover:bg-white/[.07] focus:outline-none focus-visible:ring-2 focus-visible:ring-ember-400;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/[.03] px-4 py-2.5 text-sm font-medium text-zinc-200 transition hover:border-white/25 hover:bg-white/[.07] focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400;
   }
 
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[.18em] text-ember-400;
+    @apply text-xs font-semibold uppercase tracking-[.18em] text-orange-400;
   }
 
   .section {
@@ -81,7 +77,7 @@ body {
   }
 
   .pricing-card.featured {
-    @apply border-orange-400/40 bg-orange-500/[.06] shadow-glow;
+    @apply border-orange-400/40 bg-orange-500/[.06] shadow-lg;
   }
 
   .badge {
