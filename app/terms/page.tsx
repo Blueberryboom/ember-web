@@ -1,0 +1,1 @@
+export default function Terms(){return <section className="section prose prose-invert"><h1>Terms of Service</h1><p>This placeholder must be replaced with Ember&apos;s published terms before public launch.</p></section>}
