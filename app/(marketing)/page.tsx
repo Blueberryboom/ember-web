@@ -1,2 +1,14 @@
-import { CTA, Features, Hero, Pricing, Stats } from '@/components/marketing';
-export default function Home(){return <><Hero/><Features/><Stats/><Pricing/><CTA/></>}
+import { CTA, Features, Hero, HowItWorks, Pricing, Stats } from '@/components/marketing';
+
+export default function Home() {
+  return (
+    <>
+      <Hero />
+      <Features />
+      <HowItWorks />
+      <Stats />
+      <Pricing />
+      <CTA />
+    </>
+  );
+}

@@ -8,7 +8,7 @@ export const siteConfig = {
   githubUrl: process.env.NEXT_PUBLIC_GITHUB_URL || 'https://github.com/emberbot',
   supportUrl: 'mailto:support@emberbot.dev',
 };
-export const placeholderStats = { servers: '1,234', users: '123,456', uptime: '99.9%', responseTime: '120ms' };
+export const placeholderStats = { servers: '1,234', users: '123,456', uptime: '99.9%', responseTime: '120ms', commands: '50+' };
 // Placeholder pricing: replace the £X values once plans are finalised.
 export const pricingPlans = [
   { name: 'Free', price: '£0', description: 'For smaller communities getting started with Ember.', featured: false },
