@@ -30,7 +30,7 @@ export function Hero() {
       {/* faint grid backdrop */}
       <div className="hero-grid absolute inset-0" aria-hidden />
 
-      <div className="relative mx-auto max-w-7xl px-5 pb-16 pt-20 sm:px-8 sm:pt-28 lg:pt-24">
+      <div className="relative mx-auto max-w-[88rem] px-5 pb-16 pt-20 sm:px-8 sm:pt-28 lg:pt-24">
         <div className="lg:grid lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-14">
           <div className="text-center lg:text-left">
             <Reveal>
@@ -262,7 +262,7 @@ export function Stats() {
   ];
   return (
     <section className="border-y border-white/[.06] bg-white/[.015]" aria-label="Trust">
-      <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16">
+      <div className="mx-auto max-w-[88rem] px-5 py-14 sm:px-8 sm:py-16">
         <Reveal>
           <div className="grid gap-10 text-center sm:grid-cols-3">
             {items.map((s) => (
