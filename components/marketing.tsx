@@ -37,60 +37,63 @@ export function Hero() {
         className="absolute left-1/2 top-24 h-56 w-[42rem] max-w-[90vw] -translate-x-1/2 rounded-full bg-ember-600/20 blur-[110px]"
       />
 
-      <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-20 text-center sm:px-8 sm:pt-28">
-        <Reveal>
-          <p className="pill mx-auto">
-            <Flame size={13} className="text-ember-400" />
-            <span className="eyebrow gap-0 before:hidden">Ember for Discord</span>
-            <span className="hidden h-3 w-px bg-white/15 sm:block" />
-            <span className="hidden text-zinc-400 sm:inline">Moderation &amp; utility</span>
-          </p>
-        </Reveal>
+      <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-20 sm:px-8 sm:pt-28 lg:pt-24">
+        <div className="lg:grid lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-14">
+          <div className="text-center lg:text-left">
+            <Reveal>
+              <p className="pill">
+                <Flame size={13} className="text-ember-400" />
+                <span className="eyebrow">Ember for Discord</span>
+                <span className="hidden h-3 w-px bg-white/15 sm:block" />
+                <span className="hidden text-zinc-400 sm:inline">Moderation &amp; utility</span>
+              </p>
+            </Reveal>
 
-        <Reveal delay={90}>
-          <h1 className="mx-auto mt-7 max-w-4xl text-balance text-5xl font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl">
-            A calmer, safer
-            <br className="hidden sm:block" /> Discord server,{' '}
-            <span className="bg-gradient-to-b from-ember-200 via-ember-400 to-ember-600 bg-clip-text text-transparent">
-              powered by Ember.
-            </span>
-          </h1>
-        </Reveal>
+            <Reveal delay={90}>
+              <h1 className="mx-auto mt-7 max-w-4xl text-balance text-5xl font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-6xl lg:mx-0 xl:text-7xl">
+                A calmer, safer Discord server,{' '}
+                <span className="bg-gradient-to-b from-ember-200 via-ember-400 to-ember-600 bg-clip-text text-transparent">
+                  powered by Ember.
+                </span>
+              </h1>
+            </Reveal>
 
-        <Reveal delay={170}>
-          <p className="lead mx-auto mt-6 max-w-2xl text-pretty">
-            Ember is a modern moderation and utility bot for communities that
-            take trust seriously: clear automod, useful commands, and honest
-            logs, without the clutter.
-          </p>
-        </Reveal>
+            <Reveal delay={170}>
+              <p className="lead mx-auto mt-6 max-w-2xl text-pretty lg:mx-0">
+                Ember is a modern moderation and utility bot for communities that
+                take trust seriously: clear automod, useful commands, and honest
+                logs, without the clutter.
+              </p>
+            </Reveal>
 
-        <Reveal delay={240}>
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link href="/invite" className="button-primary w-full px-6 py-3 text-[15px] sm:w-auto">
-              Add Ember to Discord <ArrowRight size={16} aria-hidden />
-            </Link>
-            <Link href="#features" className="button-secondary w-full px-6 py-3 text-[15px] sm:w-auto">
-              Explore Features
-            </Link>
+            <Reveal delay={240}>
+              <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
+                <Link href="/invite" className="button-primary w-full px-6 py-3 text-[15px] sm:w-auto">
+                  Add Ember to Discord <ArrowRight size={16} aria-hidden />
+                </Link>
+                <Link href="#features" className="button-secondary w-full px-6 py-3 text-[15px] sm:w-auto">
+                  Explore Features
+                </Link>
+              </div>
+              <p className="mt-5 text-[13px] text-zinc-500">
+                Free for small servers · Set up in minutes · No credit card
+              </p>
+            </Reveal>
           </div>
-          <p className="mt-5 text-[13px] text-zinc-500">
-            Free for small servers · Set up in minutes · No credit card
-          </p>
-        </Reveal>
 
-        <Reveal delay={300} className="relative mx-auto mt-14 max-w-5xl text-left">
-          <div
-            aria-hidden
-            className="absolute -inset-x-8 top-8 bottom-0 rounded-[32px] bg-gradient-to-b from-ember-500/[.12] to-transparent blur-2xl"
-          />
-          <DashboardShowcase />
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[12px] text-zinc-500">
-            <span className="inline-flex items-center gap-1.5"><ShieldCheck size={13} className="text-ember-400" /> Automod + logging</span>
-            <span className="inline-flex items-center gap-1.5"><Terminal size={13} className="text-ember-400" /> Slash commands</span>
-            <span className="inline-flex items-center gap-1.5"><ServerCog size={13} className="text-ember-400" /> Per-server config</span>
-          </div>
-        </Reveal>
+          <Reveal delay={300} className="relative mt-14 w-full text-left lg:mt-0">
+            <div
+              aria-hidden
+              className="absolute -inset-x-8 top-8 bottom-0 rounded-[32px] bg-gradient-to-b from-ember-500/[.12] to-transparent blur-2xl"
+            />
+            <DashboardShowcase />
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[12px] text-zinc-500 lg:justify-start">
+              <span className="inline-flex items-center gap-1.5"><ShieldCheck size={13} className="text-ember-400" /> Automod + logging</span>
+              <span className="inline-flex items-center gap-1.5"><Terminal size={13} className="text-ember-400" /> Slash commands</span>
+              <span className="inline-flex items-center gap-1.5"><ServerCog size={13} className="text-ember-400" /> Per-server config</span>
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
@@ -304,7 +307,7 @@ export function Pricing({ full = false }: { full?: boolean }) {
     <section className={full ? 'section pt-16' : 'section'} aria-label="Pricing">
       <Reveal>
         <div className="section-heading mx-auto text-center">
-          <p className="eyebrow eyebrow-centered justify-center">Simple plans</p>
+          <p className="eyebrow justify-center">Simple plans</p>
           <h2>Start free. Grow when you&apos;re ready.</h2>
           <p className="mx-auto">Plans below are placeholders while final pricing is confirmed; the structure is what matters.</p>
         </div>
@@ -366,7 +369,7 @@ export function CTA() {
             <div className="absolute bottom-[-55%] right-[8%] h-[300px] w-[420px] rounded-full bg-warm-gold/[.07] blur-[100px]" />
           </div>
           <div className="relative">
-            <p className="eyebrow eyebrow-centered justify-center">Get started</p>
+            <p className="eyebrow justify-center">Get started</p>
             <h2 className="mx-auto mt-4 max-w-2xl text-balance text-3xl font-semibold tracking-[-0.035em] text-white sm:text-5xl">
               Ready to make your Discord server better?
             </h2>
