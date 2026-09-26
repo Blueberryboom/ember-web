@@ -27,17 +27,10 @@ import { DashboardShowcase } from './dashboard-showcase';
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* atmosphere */}
+      {/* faint grid backdrop */}
       <div className="hero-grid absolute inset-0" aria-hidden />
-      <div className="ember-drift absolute left-1/2 top-[-320px] h-[560px] w-[900px] -translate-x-1/2" aria-hidden>
-        <div className="hero-glow absolute inset-0" />
-      </div>
-      <div
-        aria-hidden
-        className="absolute left-1/2 top-24 h-56 w-[42rem] max-w-[90vw] -translate-x-1/2 rounded-full bg-ember-600/20 blur-[110px]"
-      />
 
-      <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-20 sm:px-8 sm:pt-28 lg:pt-24">
+      <div className="relative mx-auto max-w-7xl px-5 pb-16 pt-20 sm:px-8 sm:pt-28 lg:pt-24">
         <div className="lg:grid lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-14">
           <div className="text-center lg:text-left">
             <Reveal>
@@ -52,7 +45,7 @@ export function Hero() {
             <Reveal delay={90}>
               <h1 className="mx-auto mt-7 max-w-4xl text-balance text-5xl font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-6xl lg:mx-0 xl:text-7xl">
                 A calmer, safer Discord server,{' '}
-                <span className="bg-gradient-to-b from-ember-200 via-ember-400 to-ember-600 bg-clip-text text-transparent">
+                <span className="text-ember-400">
                   powered by Ember.
                 </span>
               </h1>
@@ -82,10 +75,6 @@ export function Hero() {
           </div>
 
           <Reveal delay={300} className="relative mt-14 w-full text-left lg:mt-0">
-            <div
-              aria-hidden
-              className="absolute -inset-x-8 top-8 bottom-0 rounded-[32px] bg-gradient-to-b from-ember-500/[.12] to-transparent blur-2xl"
-            />
             <DashboardShowcase />
             <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[12px] text-zinc-500 lg:justify-start">
               <span className="inline-flex items-center gap-1.5"><ShieldCheck size={13} className="text-ember-400" /> Automod + logging</span>
@@ -273,7 +262,7 @@ export function Stats() {
   ];
   return (
     <section className="border-y border-white/[.06] bg-white/[.015]" aria-label="Trust">
-      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
+      <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16">
         <Reveal>
           <div className="grid gap-10 text-center sm:grid-cols-3">
             {items.map((s) => (
@@ -363,11 +352,6 @@ export function CTA() {
     <section className="section pt-0" aria-label="Get started">
       <Reveal>
         <div className="noise relative overflow-hidden rounded-3xl border border-white/[.09] bg-[#141010] px-6 py-16 text-center sm:px-12 sm:py-20">
-          <div aria-hidden className="absolute inset-0">
-            <div className="absolute left-1/2 top-[-40%] h-[420px] w-[720px] max-w-[120vw] -translate-x-1/2 rounded-full bg-ember-600/[.22] blur-[110px]" />
-            <div className="absolute bottom-[-55%] left-[8%] h-[300px] w-[420px] rounded-full bg-glow-red/[.14] blur-[100px]" />
-            <div className="absolute bottom-[-55%] right-[8%] h-[300px] w-[420px] rounded-full bg-warm-gold/[.07] blur-[100px]" />
-          </div>
           <div className="relative">
             <p className="eyebrow justify-center">Get started</p>
             <h2 className="mx-auto mt-4 max-w-2xl text-balance text-3xl font-semibold tracking-[-0.035em] text-white sm:text-5xl">

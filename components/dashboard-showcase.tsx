@@ -27,7 +27,6 @@ const toneDot: Record<string, string> = {
 export function DashboardShowcase() {
   return (
     <div className="showcase-frame noise showcase-float" role="img" aria-label="Preview of the Ember dashboard showing moderation overview for a Discord server">
-      <div className="showcase-glow" aria-hidden />
       {/* window chrome */}
       <div className="flex items-center gap-2 border-b border-white/[.07] bg-white/[.02] px-4 py-3">
         <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
@@ -43,7 +42,7 @@ export function DashboardShowcase() {
         {/* sidebar */}
         <aside className="hidden border-r border-white/[.07] bg-black/25 p-4 md:block">
           <div className="flex items-center gap-2.5 rounded-xl border border-white/[.07] bg-white/[.03] p-2.5">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-b from-ember-500 to-ember-700 text-white">
+            <span className="grid h-9 w-9 place-items-center rounded-lg bg-ember-500 text-white">
               <Flame size={17} />
             </span>
             <div className="min-w-0">
