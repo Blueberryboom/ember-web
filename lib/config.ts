@@ -5,6 +5,7 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://emberbot.dev',
   inviteUrl: `https://discord.com/oauth2/authorize?client_id=${clientId}&scope=bot%20applications.commands`,
   dashboardUrl: 'https://dash.emberbot.dev',
+  statusUrl: 'https://status.emberbot.dev',
   githubUrl: process.env.NEXT_PUBLIC_GITHUB_URL || 'https://github.com/emberbot',
   supportUrl: 'mailto:support@emberbot.dev',
 };

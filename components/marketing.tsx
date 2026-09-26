@@ -1,22 +1,15 @@
 import Link from 'next/link';
 import {
   ArrowRight,
-  BellRing,
   Check,
-  Command,
-  FileWarning,
-  Flame,
-  HeartHandshake,
-  Info,
-  ListChecks,
-  Megaphone,
-  ScrollText,
+  LayoutDashboard,
+  Network,
   ServerCog,
   ShieldCheck,
   SlidersHorizontal,
-  Sparkles,
   Terminal,
-  Users,
+  Ticket,
+  Unlock,
 } from 'lucide-react';
 import { placeholderStats, pricingPlans } from '@/lib/config';
 import { Reveal } from './reveal';
@@ -33,15 +26,6 @@ export function Hero() {
       <div className="relative mx-auto max-w-[88rem] px-5 pb-16 pt-20 sm:px-8 sm:pt-28 lg:pt-24">
         <div className="lg:grid lg:grid-cols-[1fr_1.05fr] lg:items-center lg:gap-14">
           <div className="text-center lg:text-left">
-            <Reveal>
-              <p className="pill">
-                <Flame size={13} className="text-ember-400" />
-                <span className="eyebrow">Ember for Discord</span>
-                <span className="hidden h-3 w-px bg-white/15 sm:block" />
-                <span className="hidden text-zinc-400 sm:inline">Moderation &amp; utility</span>
-              </p>
-            </Reveal>
-
             <Reveal delay={90}>
               <h1 className="mx-auto mt-7 max-w-4xl text-balance text-5xl font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-6xl lg:mx-0 xl:text-7xl">
                 A calmer, safer Discord server,{' '}
@@ -88,129 +72,38 @@ export function Hero() {
   );
 }
 
-/* ---------------- Feature sections ---------------- */
+/* ---------------- Why Ember? ---------------- */
 
-const moderationSupport = [
-  { icon: BellRing, title: 'Automoderation', desc: 'Catch spam, raids, links and bad words before your mods even wake up.' },
-  { icon: ScrollText, title: 'Logging', desc: 'A clear audit trail of who did what, when, and why.' },
-  { icon: FileWarning, title: 'Anti-spam', desc: 'Rate limits, duplicate detection and invite guards that stay quiet until needed.' },
+const whyEmber = [
+  { icon: SlidersHorizontal, title: 'Truly Customizable', desc: "Configure commands, messages, and behavior to match your server's unique needs!" },
+  { icon: Unlock, title: 'No Paywalls', desc: 'All features are completely free with generous limits. We only charge you for features that genuinely cost us money.' },
+  { icon: Network, title: 'Server Networks', desc: 'Link multiple servers together for unified moderation, synchronized bans, and centralized management.' },
+  { icon: Ticket, title: 'Professional Tickets', desc: 'Create a ticket system that feels like a custom-built system, not a generic bot feature.' },
+  { icon: LayoutDashboard, title: 'Clean Dashboard', desc: 'Manage everything from an intuitive control panel, with no complex discord commands necessary.' },
+  { icon: ShieldCheck, title: 'Protect Your Server', desc: 'Keep your server safe with our advanced verification, automod, and moderation systems!' },
 ];
-
-const utilityItems = [
-  { icon: Terminal, title: 'Useful server commands', desc: 'Everyday slash commands your mods and members will actually use.' },
-  { icon: Info, title: 'Server information', desc: 'At-a-glance member, channel and role insight when you need it.' },
-  { icon: Users, title: 'User information', desc: 'Join history, warnings and notes in one calm profile view.' },
-  { icon: SlidersHorizontal, title: 'Management tools', desc: 'Slowmode, lockdowns, purges and channel helpers that respect your setup.' },
-];
-
-const communityItems = [
-  { icon: HeartHandshake, title: 'Engagement features', desc: 'Levels, streaks and gentle nudges that reward good members.' },
-  { icon: Megaphone, title: 'Welcome tools', desc: 'Greet newcomers, verify humans, and point them to the right channels.' },
-  { icon: Command, title: 'Custom commands', desc: 'Turn repeated answers into one-word replies your whole team can use.' },
-  { icon: Sparkles, title: 'Community utilities', desc: 'Polls, reminders and announcements without a second bot.' },
-];
-
-function CategoryHeader({ index, title, desc }: { index: string; title: string; desc: string }) {
-  return (
-    <div className="flex items-start gap-4">
-      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-ember-500/30 bg-ember-500/10 font-mono text-[13px] font-semibold text-ember-300">
-        {index}
-      </span>
-      <div>
-        <h3 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">{title}</h3>
-        <p className="mt-1.5 max-w-xl leading-7 text-zinc-400">{desc}</p>
-      </div>
-    </div>
-  );
-}
 
 export function Features() {
   return (
-    <section className="section pb-0" id="features" aria-label="Features">
+    <section className="section pb-0" id="features" aria-label="Why Ember?">
       <Reveal>
         <div className="section-heading">
-          <p className="eyebrow">What Ember does</p>
-          <h2>Everything a well-run server needs. Nothing it doesn&apos;t.</h2>
-          <p>Three focused toolkits (moderation, utility, and community) designed to work quietly together.</p>
+          <p className="eyebrow">Why Ember?</p>
+          <h2>Everything your server needs, nothing it doesn&apos;t.</h2>
+          <p>Six reasons communities choose Ember, from deep customization to serious protection.</p>
         </div>
       </Reveal>
 
-      {/* Moderation: large feature + supporting list */}
-      <div className="mt-14">
-        <Reveal><CategoryHeader index="01" title="Moderation" desc="Keep the server safe with tools your whole mod team can trust: firm when it matters, invisible when it doesn't." /></Reveal>
-        <div className="mt-8 grid gap-4 lg:grid-cols-[1.15fr_.85fr]">
-          <Reveal delay={60}>
-            <article className="panel panel-hover relative h-full overflow-hidden p-7 sm:p-9">
-              <div aria-hidden className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-ember-600/15 blur-[80px]" />
-              <div className="icon-chip"><ShieldCheck size={19} /></div>
-              <h4 className="mt-5 text-2xl font-semibold tracking-tight text-white">Moderation your team will actually enjoy</h4>
-              <p className="mt-3 max-w-md leading-7 text-zinc-400">
-                Consistent actions, required reasons, and a readable history,
-                so decisions are explainable long after the moment passes.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {['Warn', 'Timeout', 'Kick', 'Ban'].map((a) => (
-                  <span key={a} className="rounded-full border border-white/10 bg-white/[.04] px-3 py-1 font-mono text-[11px] text-zinc-300">/{a.toLowerCase()}</span>
-                ))}
-              </div>
-              {/* mini log UI */}
-              <div className="mt-7 overflow-hidden rounded-xl border border-white/[.08] bg-black/30">
-                <div className="flex items-center gap-2 border-b border-white/[.07] px-4 py-2.5 text-[11px] text-zinc-500">
-                  <ListChecks size={12} className="text-ember-400" /> mod-log · #staff
-                </div>
-                <ul className="divide-y divide-white/[.05] font-mono text-[12px]">
-                  <li className="flex gap-3 px-4 py-2.5"><span className="text-zinc-600">21:04</span><span className="text-zinc-300"><span className="text-amber-300">warn</span> @noisy.robot_42 · spam ×4</span></li>
-                  <li className="flex gap-3 px-4 py-2.5"><span className="text-zinc-600">20:47</span><span className="text-zinc-300"><span className="text-red-300">timeout</span> @quiet.guest · 10m · raid join</span></li>
-                </ul>
-              </div>
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {whyEmber.map((f, i) => (
+          <Reveal key={f.title} delay={(i % 3) * 80}>
+            <article className="feature-card h-full">
+              <div className="icon-chip"><f.icon size={19} /></div>
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
             </article>
           </Reveal>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-            {moderationSupport.map((f, i) => (
-              <Reveal key={f.title} delay={100 + i * 60}>
-                <article className="feature-card h-full">
-                  <f.icon size={20} className="text-ember-400" />
-                  <h3>{f.title}</h3>
-                  <p>{f.desc}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Utility: alternating two-column */}
-      <div className="mt-20">
-        <Reveal><CategoryHeader index="02" title="Utility" desc="Day-to-day commands and insight for mods, admins and curious members." /></Reveal>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {utilityItems.map((f, i) => (
-            <Reveal key={f.title} delay={(i % 2) * 80}>
-              <article className="feature-card flex h-full gap-4">
-                <div className="icon-chip"><f.icon size={18} /></div>
-                <div>
-                  <h3 className="mt-0">{f.title}</h3>
-                  <p>{f.desc}</p>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-
-      {/* Community: compact strip */}
-      <div className="mt-20">
-        <Reveal><CategoryHeader index="03" title="Community" desc="Warm touches that make new members stay and regulars feel seen." /></Reveal>
-        <Reveal delay={80}>
-          <div className="panel mt-8 grid gap-px overflow-hidden bg-white/[.07] p-0 sm:grid-cols-2 lg:grid-cols-4">
-            {communityItems.map((f) => (
-              <div key={f.title} className="group bg-[#141010] p-6 transition-colors hover:bg-[#1a1514]">
-                <f.icon size={20} className="text-ember-400 transition-transform duration-200 group-hover:-translate-y-0.5" />
-                <h4 className="mt-4 font-semibold tracking-tight text-white">{f.title}</h4>
-                <p className="mt-1.5 text-sm leading-6 text-zinc-400">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
+        ))}
       </div>
     </section>
   );
