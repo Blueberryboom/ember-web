@@ -66,7 +66,7 @@ export function Hero() {
                 width={440}
                 height={440}
                 priority
-                className="h-56 w-56 rounded-full object-cover shadow-[0_40px_100px_-30px_rgb(247_101_26/0.55)] sm:h-72 sm:w-72"
+                className="h-56 w-56 rounded-full object-cover sm:h-72 sm:w-72"
               />
             </div>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[12px] text-zinc-500 lg:justify-start">
