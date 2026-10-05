@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Stats />
       <Features />
       <HowItWorks />
-      <Stats />
       <Pricing />
       <CTA />
     </>
