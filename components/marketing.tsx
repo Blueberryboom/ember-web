@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { placeholderStats } from '@/lib/config';
 import { Reveal } from './reveal';
+import { WaveEdge } from './wave-edge'; 
 
 /* ---------------- Hero ---------------- */
 
@@ -162,8 +163,9 @@ export function Stats() {
     { value: placeholderStats.uptime, label: 'Uptime' },
   ];
   return (
-    <section className="border-y border-white/[.06] bg-white/[.015]" aria-label="Trust">
-      <div className="mx-auto max-w-[88rem] px-5 py-14 sm:px-8 sm:py-16">
+    <section className="relative isolate overflow-hidden bg-[#1c1f24]" aria-label="Trust">
+      <WaveEdge placement="top" />
+      <div className="relative z-10 mx-auto max-w-[88rem] px-5 py-24 sm:px-8">
         <Reveal>
           <div className="grid gap-10 text-center sm:grid-cols-3">
             {items.map((s) => (
@@ -180,6 +182,7 @@ export function Stats() {
           </p>
         </Reveal>
       </div>
+      <WaveEdge placement="bottom" />
     </section>
   );
 }

@@ -391,12 +391,9 @@ body {
 }
 
 /* ---------- wave edge drift ---------- */
+/* ---------- COOL RIGHT?!! Pls work ---------- */
 .wave-edge {
-  animation: wave-drift 60s linear infinite;
-}
-
-.wave-edge-reverse {
-  animation-direction: reverse;
+  animation: wave-drift 120s linear infinite;
 }
 
 @keyframes wave-drift {

@@ -19,7 +19,7 @@ const features = [
 export default function CustomBrandingPage() {
   return (
     <>
-        <div className="relative isolate overflow-hidden bg-[#1c1f24] py-6">
+      <div className="relative isolate overflow-hidden bg-[#1c1f24] py-10">
         <WaveEdge placement="top" />
         <section className="section premium-theme premium-blue relative z-10 pt-16" aria-label="Custom Branding">
           <Reveal>
