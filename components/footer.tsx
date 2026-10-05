@@ -17,7 +17,6 @@ const groups = [
     links: [
       ['Documentation', '/docs'],
       ['Support', siteConfig.supportUrl],
-      ['GitHub', siteConfig.githubUrl],
     ],
   },
   {

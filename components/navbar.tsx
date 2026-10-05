@@ -2,9 +2,8 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { ArrowUpRight, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Logo } from './logo';
-import { siteConfig } from '@/lib/config';
 
 const links = [
   { href: '/#features', label: 'Features' },
@@ -46,14 +45,6 @@ export function Navbar() {
               {x.label}
             </Link>
           ))}
-          <a
-            href={siteConfig.githubUrl}
-            className="nav-link inline-flex items-center gap-1"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub <ArrowUpRight size={13} aria-hidden />
-          </a>
         </div>
 
         <div className="hidden items-center gap-2 md:flex">
@@ -92,14 +83,6 @@ export function Navbar() {
               {x.label}
             </Link>
           ))}
-          <a
-            className="block border-b border-white/[.05] py-3.5 text-[15px] text-zinc-200"
-            href={siteConfig.githubUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
           <Link
             onClick={() => setOpen(false)}
             href="/dashboard"
