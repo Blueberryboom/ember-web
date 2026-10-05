@@ -390,11 +390,28 @@ body {
   transform: none;
 }
 
+/* ---------- wave edge drift ---------- */
+.wave-edge {
+  animation: wave-drift 60s linear infinite;
+}
+
+.wave-edge-reverse {
+  animation-direction: reverse;
+}
+
+@keyframes wave-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+  .wave-edge {
+    animation: none;
   }
 }
 
