@@ -1,5 +1,5 @@
-const WAVE = 'M0 0H1440V18C1200 18 960 76 720 76C480 76 240 18 0 18Z';
-const WAVE_FILLED = 'M0 100H1440V18C1200 18 960 76 720 76C480 76 240 18 0 18Z';
+const WAVE = 'M0 0H1440V36C1200 36 960 64 720 64C480 64 240 36 0 36Z';
+const WAVE_FILLED = 'M0 100H1440V36C1200 36 960 64 720 64C480 64 240 36 0 36Z';
 
 export function WaveEdge({ placement }: { placement: 'top' | 'bottom' }) {
   const isTop = placement === 'top';
