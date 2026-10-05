@@ -300,37 +300,7 @@ body {
   color: var(--ember-muted);
 }
 
-/* ---------- product showcase ---------- */
-.showcase-frame {
-  position: relative;
-  border-radius: 18px;
-  border: 1px solid rgb(255 255 255 / 0.1);
-  background: #121010;
-  box-shadow: 0 40px 120px -30px rgb(0 0 0 / 0.9);
-  overflow: hidden;
-}
-
-.pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  border-radius: 999px;
-  border: 1px solid rgb(255 255 255 / 0.1);
-  background: rgb(255 255 255 / 0.04);
-  padding: 0.35rem 0.85rem;
-  font-size: 0.78rem;
-  font-weight: 550;
-  color: #d6cfc9;
-}
-
-.pill-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: #34d399;
-  box-shadow: 0 0 10px rgb(52 211 153 / 0.9);
-}
-
+/* ---------- pricing ---------- */
 .pricing-card {
   position: relative;
   border-radius: 18px;
@@ -385,11 +355,11 @@ body {
   transform: none;
 }
 
-.showcase-float {
-  animation: showcase-float 9s ease-in-out infinite;
+.hero-float {
+  animation: hero-float 9s ease-in-out infinite;
 }
 
-@keyframes showcase-float {
+@keyframes hero-float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-7px); }
 }
@@ -400,7 +370,7 @@ body {
     transform: none;
     transition: none;
   }
-  .showcase-float {
+  .hero-float {
     animation: none;
   }
 }

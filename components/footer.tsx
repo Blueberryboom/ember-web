@@ -38,10 +38,6 @@ export function Footer() {
             Discord moderation and utility, designed for communities that take
             trust seriously.
           </p>
-          <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[.03] px-3 py-1.5 text-xs text-zinc-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgb(52_211_153/.9)]" />
-            All systems operational
-          </p>
         </div>
         {groups.map((g) => (
           <nav key={g.title} aria-label={g.title}>

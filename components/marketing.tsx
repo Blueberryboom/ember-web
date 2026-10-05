@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ArrowRight,
   Check,
@@ -13,7 +14,6 @@ import {
 } from 'lucide-react';
 import { placeholderStats, pricingPlans } from '@/lib/config';
 import { Reveal } from './reveal';
-import { DashboardShowcase } from './dashboard-showcase';
 
 /* ---------------- Hero ---------------- */
 
@@ -59,8 +59,20 @@ export function Hero() {
           </div>
 
           <Reveal delay={300} className="relative mt-14 w-full text-left lg:mt-0">
-            <DashboardShowcase />
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[12px] text-zinc-500 lg:justify-start">
+            <div className="relative flex w-full items-center justify-center">
+              <span aria-hidden className="absolute h-64 w-64 rounded-full bg-ember-500/25 blur-[72px] sm:h-96 sm:w-96" />
+              <span aria-hidden className="absolute h-72 w-72 rounded-full border border-white/[.07] sm:h-80 sm:w-80" />
+              <span aria-hidden className="absolute h-[19rem] w-[19rem] rounded-full border border-white/[.04] sm:h-96 sm:w-96" />
+              <Image
+                src="/favicon.png"
+                alt="Ember"
+                width={440}
+                height={440}
+                priority
+                className="hero-float relative h-56 w-56 rounded-full border border-white/10 object-cover shadow-[0_40px_100px_-30px_rgb(247_101_26/0.55)] sm:h-72 sm:w-72"
+              />
+            </div>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[12px] text-zinc-500 lg:justify-start">
               <span className="inline-flex items-center gap-1.5"><ShieldCheck size={13} className="text-ember-400" /> Automod + logging</span>
               <span className="inline-flex items-center gap-1.5"><Terminal size={13} className="text-ember-400" /> Slash commands</span>
               <span className="inline-flex items-center gap-1.5"><ServerCog size={13} className="text-ember-400" /> Per-server config</span>
