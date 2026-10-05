@@ -1,1 +1,0 @@
-import type { Metadata } from 'next'; import { Pricing, CTA } from '@/components/marketing'; export const metadata:Metadata={title:'Pricing',description:'Placeholder Ember plan information.'}; export default function Page(){return <><Pricing full/><CTA/></>}

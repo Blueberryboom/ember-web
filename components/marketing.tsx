@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   ArrowRight,
-  Check,
   LayoutDashboard,
   Network,
   ServerCog,
@@ -12,7 +11,7 @@ import {
   Ticket,
   Unlock,
 } from 'lucide-react';
-import { placeholderStats, pricingPlans } from '@/lib/config';
+import { placeholderStats } from '@/lib/config';
 import { Reveal } from './reveal';
 
 /* ---------------- Hero ---------------- */
@@ -182,109 +181,6 @@ export function Stats() {
         </Reveal>
       </div>
     </section>
-  );
-}
-
-/* ---------------- Pricing ---------------- */
-
-function WaveEdge({ placement }: { placement: 'top' | 'bottom' }) {
-  const isTop = placement === 'top';
-  return (
-    <svg
-      aria-hidden
-      viewBox="0 0 1440 100"
-      preserveAspectRatio="none"
-      className={`pointer-events-none absolute inset-x-0 z-0 h-[70px] w-full sm:h-20 ${
-        isTop ? 'top-0' : 'bottom-0'
-      }`}
-    >
-      <path
-        fill="var(--ember-bg)"
-        d={
-          isTop
-            ? 'M0 0H1440V42C1190 92 960 8 720 44C470 82 250 14 0 50Z'
-            : 'M0 100H1440V56C1180 6 950 94 720 58C470 20 250 86 0 52Z'
-        }
-      />
-    </svg>
-  );
-}
-
-const planFeatures: Record<string, string[]> = {
-  Free: ['Core moderation tools', 'Essential utility commands', '1 log channel', 'Community support'],
-  Pro: ['Everything in Free', 'Advanced automod rules', 'Custom commands', 'Priority support'],
-  Unlimited: ['Everything in Pro', 'Highest limits', 'Early feature access', 'Dedicated support'],
-};
-
-export function Pricing({ full = false }: { full?: boolean }) {
-  const body = (
-    <>
-      <Reveal>
-        <div className="section-heading mx-auto text-center">
-          <p className="eyebrow justify-center">Simple plans</p>
-          <h2>Start free. Grow when you&apos;re ready.</h2>
-          <p className="mx-auto">Plans below are placeholders while final pricing is confirmed; the structure is what matters.</p>
-        </div>
-      </Reveal>
-      <div className="mt-12 grid items-stretch gap-5 lg:grid-cols-3">
-        {pricingPlans.map((p, i) => (
-          <Reveal key={p.name} delay={i * 90} className="h-full">
-            <article className={`pricing-card h-full ${p.featured ? 'featured' : ''}`}>
-              {p.featured && (
-                <span className="badge absolute right-5 top-5">Most popular</span>
-              )}
-              <h3 className="text-[15px] font-semibold text-white">{p.name}</h3>
-              <p className="mt-3 text-4xl font-semibold tracking-tight text-white">
-                {p.price}
-                <span className="text-base font-normal text-zinc-500">/month</span>
-              </p>
-              <p className="mt-3 min-h-12 text-sm leading-6 text-zinc-400">{p.description}</p>
-              <ul className="mt-5 space-y-2.5 border-t border-white/[.07] pt-5 text-sm">
-                {(planFeatures[p.name] ?? []).map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-zinc-300">
-                    <Check size={15} className={`mt-0.5 shrink-0 ${p.featured ? 'text-ember-300' : 'text-emerald-400'}`} aria-hidden />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/invite"
-                className={`${p.featured ? 'button-primary' : 'button-secondary'} mt-7 w-full`}
-              >
-                Get started
-              </Link>
-            </article>
-          </Reveal>
-        ))}
-      </div>
-      {!full && (
-        <Reveal delay={120}>
-          <div className="mt-8 text-center">
-            <Link href="/pricing" className="inline-flex items-center gap-1.5 text-sm font-medium text-ember-300 transition hover:text-ember-200">
-              Compare plans in detail <ArrowRight size={15} aria-hidden />
-            </Link>
-          </div>
-        </Reveal>
-      )}
-    </>
-  );
-
-  if (full) {
-    return (
-      <section className="section pt-16" aria-label="Pricing">
-        {body}
-      </section>
-    );
-  }
-
-  return (
-    <div className="relative isolate bg-[#1c1f24] py-6">
-      <WaveEdge placement="top" />
-      <section className="section relative z-10" aria-label="Pricing">
-        {body}
-      </section>
-      <WaveEdge placement="bottom" />
-    </div>
   );
 }
 

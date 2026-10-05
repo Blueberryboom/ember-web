@@ -1,4 +1,4 @@
-import { CTA, Features, Hero, HowItWorks, Pricing, Stats } from '@/components/marketing';
+import { CTA, Features, Hero, HowItWorks, Stats } from '@/components/marketing';
 
 export default function Home() {
   return (
@@ -7,7 +7,6 @@ export default function Home() {
       <Stats />
       <Features />
       <HowItWorks />
-      <Pricing />
       <CTA />
     </>
   );

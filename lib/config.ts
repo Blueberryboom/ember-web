@@ -9,9 +9,3 @@ export const siteConfig = {
   supportUrl: 'mailto:support@emberbot.dev',
 };
 export const placeholderStats = { servers: '1,234', users: '123,456', uptime: '99.9%', responseTime: '120ms', commands: '50+' };
-// Placeholder pricing: replace the £X values once plans are finalised.
-export const pricingPlans = [
-  { name: 'Free', price: '£0', description: 'For smaller communities getting started with Ember.', featured: false },
-  { name: 'Pro', price: '£X', description: 'For communities that need additional functionality and customisation.', featured: true },
-  { name: 'Unlimited', price: '£X', description: 'For larger communities requiring the highest limits.', featured: false },
-];

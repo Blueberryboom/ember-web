@@ -300,35 +300,6 @@ body {
   color: var(--ember-muted);
 }
 
-/* ---------- pricing ---------- */
-.pricing-card {
-  position: relative;
-  border-radius: 18px;
-  border: 1px solid rgb(255 255 255 / 0.09);
-  background-color: #141010;
-  padding: 1.75rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.pricing-card.featured {
-  border-color: rgb(247 101 26 / 0.45);
-  background-color: rgb(247 101 26 / 0.05);
-  box-shadow: 0 24px 70px -28px rgb(0 0 0 / 0.8);
-}
-
-.badge {
-  border-radius: 999px;
-  background: var(--color-ember-500);
-  color: #fff;
-  padding: 0.28rem 0.7rem;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  box-shadow: 0 6px 18px -6px rgb(247 101 26 / 0.7);
-}
-
 .footer-link {
   font-size: 0.875rem;
   color: #a8a29e;
@@ -339,6 +310,70 @@ body {
 
 .footer-link:hover {
   color: #fff;
+}
+
+/* ---------- premium pages ---------- */
+.premium-green {
+  --accent: #22be76;
+  --accent-contrast: #0b0908;
+}
+
+.premium-blue {
+  --accent: #275af5;
+  --accent-contrast: #ffffff;
+}
+
+.premium-theme .eyebrow {
+  color: var(--accent);
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.premium-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  border: 1px solid rgb(255 255 255 / 0.09);
+  background-color: #141010;
+  padding: 1.75rem;
+}
+
+.premium-card.featured {
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  background-color: color-mix(in srgb, var(--accent) 7%, #141010);
+  box-shadow: 0 24px 70px -28px rgb(0 0 0 / 0.8);
+}
+
+.premium-badge {
+  position: absolute;
+  right: 1.25rem;
+  top: 1.25rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  padding: 0.28rem 0.7rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.button-accent {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  box-shadow:
+    0 8px 24px -8px color-mix(in srgb, var(--accent) 60%, transparent),
+    0 2px 8px -2px rgb(0 0 0 / 0.6);
+}
+
+.button-accent:hover {
+  background: color-mix(in srgb, var(--accent) 84%, white);
+  box-shadow:
+    0 10px 32px -8px color-mix(in srgb, var(--accent) 75%, transparent),
+    0 2px 8px -2px rgb(0 0 0 / 0.6);
 }
 } /* end @layer components */
 

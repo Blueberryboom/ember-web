@@ -7,7 +7,8 @@ const groups = [
     title: 'Product',
     links: [
       ['Features', '/#features'],
-      ['Pricing', '/pricing'],
+      ['Limit Increase', '/limit-increase'],
+      ['Custom Branding', '/custom-branding'],
       ['Dashboard', '/dashboard'],
       ['Status', '/status'],
     ],

@@ -7,7 +7,8 @@ import { Logo } from './logo';
 
 const links = [
   { href: '/#features', label: 'Features' },
-  { href: '/pricing', label: 'Pricing' },
+  { href: '/limit-increase', label: 'Limit Increase' },
+  { href: '/custom-branding', label: 'Custom Branding' },
   { href: '/docs', label: 'Docs' },
   { href: '/status', label: 'Status' },
 ];
@@ -39,7 +40,7 @@ export function Navbar() {
       >
         <Logo />
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           {links.map((x) => (
             <Link key={x.label} href={x.href} className="nav-link">
               {x.label}
@@ -62,7 +63,7 @@ export function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen(!open)}
-          className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-white/[.04] text-zinc-200 md:hidden"
+          className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-white/[.04] text-zinc-200 lg:hidden"
         >
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -71,7 +72,7 @@ export function Navbar() {
       {open && (
         <div
           id="mobile-nav"
-          className="border-t border-white/[.07] bg-[#0d0a09]/98 px-5 pb-6 pt-2 backdrop-blur md:hidden"
+          className="border-t border-white/[.07] bg-[#0d0a09]/98 px-5 pb-6 pt-2 backdrop-blur lg:hidden"
         >
           {links.map((x) => (
             <Link
