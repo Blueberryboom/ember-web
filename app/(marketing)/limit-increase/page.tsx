@@ -57,7 +57,7 @@ export default function LimitIncreasePage() {
               <p className="eyebrow justify-center">Premium</p>
               <h2>More headroom for busy servers.</h2>
               <p className="mx-auto">
-                Limit Increase raises what Ember can keep up with — more welcome
+                Limit Increase raises what Ember can keep up with: more welcome
                 messages, images, automations and sticky posts, on Max or
                 Supporter.
               </p>

@@ -390,17 +390,6 @@ body {
   transform: none;
 }
 
-/* ---------- wave edge drift ---------- */
-.wave-edge {
-  will-change: transform;
-  animation: wave-drift 45s linear infinite;
-}
-
-@keyframes wave-drift {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(-50%, 0, 0); }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;

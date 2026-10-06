@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { placeholderStats } from '@/lib/config';
 import { Reveal } from './reveal';
-import { WaveEdge } from './wave-edge'; 
+import { WaveEdge } from './wave-edge';
 
 /* ---------------- Hero ---------------- */
 

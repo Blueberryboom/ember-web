@@ -43,7 +43,7 @@ export default function CustomBrandingPage() {
                   <span className="text-base font-normal text-zinc-500">/month</span>
                 </p>
                 <p className="mt-3 min-h-12 text-sm leading-6 text-zinc-400">
-                  Placeholder plan — pricing and scope are still being confirmed.
+                  Placeholder plan: pricing and scope are still being confirmed.
                 </p>
                 <ul className="mt-5 space-y-2.5 border-t border-white/[.07] pt-5 text-sm">
                   {features.map((f) => (
