@@ -34,6 +34,9 @@
   --ember-line: rgb(255 255 255 / 0.08);
   --ember-text: #faf7f5;
   --ember-muted: #a8a29e;
+}
+
+.dark {
   --fd-background: #0b0908;
   --fd-foreground: #faf7f5;
   --fd-muted-foreground: #a8a29e;
@@ -69,6 +72,20 @@ body {
   overflow-x: hidden;
 }
 
+/* docs pages follow the Fumadocs theme (light by default, .dark for dark);
+   marketing pages keep their fixed dark palette */
+body:has(#nd-docs-layout) {
+  --ember-line: rgb(0 0 0 / 0.1);
+  background-color: var(--color-fd-background);
+  color: var(--color-fd-foreground);
+}
+
+.dark body:has(#nd-docs-layout) {
+  --ember-line: rgb(255 255 255 / 0.08);
+  background-color: var(--ember-bg);
+  color: var(--ember-text);
+}
+
 ::selection {
   background: rgb(247 101 26 / 0.45);
   color: #fff;
@@ -79,6 +96,11 @@ body {
   outline: 2px solid var(--color-ember-400);
   outline-offset: 3px;
   border-radius: 6px;
+}
+
+html:not(.dark):has(#nd-docs-layout)
+  :where(a, button, [role='button'], input, select, textarea, [tabindex]):focus-visible {
+  outline-color: var(--color-ember-600);
 }
 
 /* ---------- type & layout primitives (components layer so utilities can override) ---------- */
@@ -405,31 +427,25 @@ body {
   text-wrap: balance;
 }
 
-/* Fumadocs brand integration */
-.fumadocs-layout,
-#nd-docs-layout,
-#nd-page {
-  --fd-background: #0b0908;
-  --fd-foreground: #faf7f5;
-  --fd-muted-foreground: #a8a29e;
-  --fd-border: rgb(255 255 255 / 0.08);
-  --fd-card: #141010;
-  --fd-primary: #f7651a;
-  --fd-primary-foreground: #ffffff;
-  --fd-accent: rgb(247 101 26 / 0.1);
-  --fd-accent-foreground: #ffab7a;
-  --fd-secondary: #1c1615;
+/* Fumadocs brand integration - light values are the default, dark values sit under .dark */
+#nd-sidebar {
+  background: #ffffff;
+  border-right: 1px solid rgb(0 0 0 / 0.08);
 }
 
-#nd-sidebar {
+.dark #nd-sidebar {
   background: #0d0a09;
   border-right: 1px solid rgb(255 255 255 / 0.06);
 }
 
 #nd-sidebar a[data-active='true'] {
   background: rgb(247 101 26 / 0.12);
-  color: #ffab7a;
+  color: var(--color-ember-700);
   border-radius: 8px;
+}
+
+.dark #nd-sidebar a[data-active='true'] {
+  color: #ffab7a;
 }
 
 #nd-page article {
@@ -438,41 +454,69 @@ body {
 
 #nd-page article :where(p, li) {
   line-height: 1.8;
-  color: #c9c2bd;
 }
 
 #nd-page article :where(h1, h2, h3, h4) {
   letter-spacing: -0.03em;
-  color: #fff;
   scroll-margin-top: 6rem;
+}
+
+.dark #nd-page article :where(p, li) {
+  color: #c9c2bd;
+}
+
+.dark #nd-page article :where(h1, h2, h3, h4) {
+  color: #fff;
 }
 
 #nd-page article :where(code):not(pre code) {
   background: rgb(247 101 26 / 0.12);
   border: 1px solid rgb(247 101 26 / 0.22);
-  color: #ffab7a;
+  color: var(--color-ember-700);
   border-radius: 6px;
   padding: 0.1em 0.38em;
   font-size: 0.85em;
 }
 
+.dark #nd-page article :where(code):not(pre code) {
+  color: #ffab7a;
+}
+
 #nd-page article pre {
-  background: #121010 !important;
-  border: 1px solid rgb(255 255 255 / 0.09);
+  border: 1px solid rgb(0 0 0 / 0.08);
   border-radius: 14px;
+  box-shadow: 0 20px 50px -30px rgb(0 0 0 / 0.6);
+}
+
+.dark #nd-page article pre {
+  background: #121010 !important;
+  border-color: rgb(255 255 255 / 0.09);
   box-shadow: 0 20px 50px -30px rgb(0 0 0 / 0.9);
 }
 
 #nd-page article a {
-  color: #ffab7a;
-  text-decoration-color: rgb(255 171 122 / 0.4);
+  color: var(--color-ember-700);
+  text-decoration-color: rgb(165 58 12 / 0.45);
   text-underline-offset: 3px;
 }
 
 #nd-page article a:hover {
+  color: var(--color-ember-600);
+}
+
+.dark #nd-page article a {
+  color: #ffab7a;
+  text-decoration-color: rgb(255 171 122 / 0.4);
+}
+
+.dark #nd-page article a:hover {
   color: #ffd3b3;
 }
 
 #nd-toc a[data-active='true'] {
+  color: var(--color-ember-700);
+}
+
+.dark #nd-toc a[data-active='true'] {
   color: #ffab7a;
 }

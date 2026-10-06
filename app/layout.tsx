@@ -27,7 +27,7 @@ export const viewport: Viewport = { themeColor: '#0b0908' };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
         <noscript>
           <style>{`.reveal{opacity:1 !important;transform:none !important;}`}</style>
