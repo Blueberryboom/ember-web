@@ -4,10 +4,8 @@ import {
   ArrowRight,
   LayoutDashboard,
   Network,
-  ServerCog,
   ShieldCheck,
   SlidersHorizontal,
-  Terminal,
   Ticket,
   Unlock,
 } from 'lucide-react';
@@ -68,11 +66,6 @@ export function Hero() {
                 priority
                 className="h-56 w-56 rounded-full object-cover sm:h-72 sm:w-72"
               />
-            </div>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[12px] text-zinc-500 lg:justify-start">
-              <span className="inline-flex items-center gap-1.5"><ShieldCheck size={13} className="text-ember-400" /> Automod + logging</span>
-              <span className="inline-flex items-center gap-1.5"><Terminal size={13} className="text-ember-400" /> Slash commands</span>
-              <span className="inline-flex items-center gap-1.5"><ServerCog size={13} className="text-ember-400" /> Per-server config</span>
             </div>
           </Reveal>
         </div>

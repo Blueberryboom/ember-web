@@ -29,31 +29,29 @@ const groups = [
   },
 ];
 
-const WAVE = 'M0 40C240 0 480 0 720 40C960 80 1200 80 1440 40';
+const WAVE_FILL = 'M0 0H1440V20C1200 20 960 80 720 80C480 80 240 20 0 20Z';
+const WAVE_LINE = 'M0 20C240 20 480 80 720 80C960 80 1200 20 1440 20';
 
 function FooterWave() {
   return (
     <svg
       aria-hidden
-      viewBox="0 0 2880 80"
+      viewBox="0 0 2880 100"
       preserveAspectRatio="none"
-      className="pointer-events-none absolute left-0 top-0 h-16 w-[200%] sm:h-24"
+      className="pointer-events-none absolute left-0 top-0 h-[70px] w-[200%] sm:h-20"
     >
-      <path
-        d={WAVE}
-        fill="none"
-        stroke="rgb(255 255 255 / 0.1)"
-        strokeWidth="2"
-        vectorEffect="non-scaling-stroke"
-      />
-      <path
-        d={WAVE}
-        transform="translate(1440 0)"
-        fill="none"
-        stroke="rgb(255 255 255 / 0.1)"
-        strokeWidth="2"
-        vectorEffect="non-scaling-stroke"
-      />
+      {[0, 1440].map((x) => (
+        <g key={x} transform={`translate(${x} 0)`}>
+          <path d={WAVE_FILL} fill="var(--ember-bg)" />
+          <path
+            d={WAVE_LINE}
+            fill="none"
+            stroke="rgb(255 255 255 / 0.08)"
+            strokeWidth="2"
+            vectorEffect="non-scaling-stroke"
+          />
+        </g>
+      ))}
     </svg>
   );
 }
