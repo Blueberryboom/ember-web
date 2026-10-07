@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Check } from 'lucide-react';
-import { CTA } from '@/components/marketing';
+import { Faq } from '@/components/faq';
 import { Reveal } from '@/components/reveal';
 import { WaveEdge } from '@/components/wave-edge';
 
@@ -140,22 +140,13 @@ export default function LimitIncreasePage() {
               </table>
             </div>
 
-            <div className="mx-auto mt-16 max-w-3xl">
-              <h2 className="text-3xl font-semibold tracking-[-0.035em] text-white">FAQ</h2>
-              <dl className="mt-6 border-t border-white/[.06]">
-                {faqs.map((faq) => (
-                  <div key={faq.q} className="border-b border-white/[.06] py-5">
-                    <dt className="text-base font-semibold text-white">{faq.q}</dt>
-                    <dd className="mt-2 text-sm leading-7 text-zinc-400">{faq.a}</dd>
-                  </div>
-                ))}
-              </dl>
+            <div className="mt-16">
+              <Faq items={faqs} />
             </div>
           </div>
           <WaveEdge placement="bottom" />
         </div>
       </div>
-      <CTA />
     </>
   );
 }

@@ -186,33 +186,3 @@ export function Stats() {
     </section>
   );
 }
-
-/* ---------------- CTA ---------------- */
-
-export function CTA() {
-  return (
-    <section className="section pt-0" aria-label="Get started">
-      <Reveal>
-        <div className="noise relative overflow-hidden rounded-3xl border border-white/[.09] bg-[#141010] px-6 py-16 text-center sm:px-12 sm:py-20">
-          <div className="relative">
-            <p className="eyebrow justify-center">Get started</p>
-            <h2 className="mx-auto mt-4 max-w-2xl text-balance text-3xl font-semibold tracking-[-0.035em] text-white sm:text-5xl">
-              Ready to make your Discord server better?
-            </h2>
-            <p className="mx-auto mt-4 max-w-lg leading-7 text-zinc-400">
-              Join the communities already running calmer, cleaner servers with Ember.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link href="/invite" className="button-primary px-6 py-3 text-[15px]">
-                Add Ember to Discord <ArrowRight size={16} aria-hidden />
-              </Link>
-              <Link href="/docs" className="button-secondary px-6 py-3 text-[15px]">
-                Read the docs
-              </Link>
-            </div>
-          </div>
-        </div>
-      </Reveal>
-    </section>
-  );
-}
