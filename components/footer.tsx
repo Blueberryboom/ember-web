@@ -66,7 +66,6 @@ export function Footer() {
       <div className="border-t border-white/[.06]">
         <div className="mx-auto flex max-w-[88rem] flex-col gap-2 px-5 py-6 text-xs text-zinc-500 sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <p>© 2026 Ember. Built for better communities.</p>
-          <p className="text-zinc-600">Moderation · Utility · Community</p>
         </div>
       </div>
     </footer>

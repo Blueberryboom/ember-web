@@ -17,12 +17,9 @@ const plans = [
     description: 'Higher limits across the board, for servers that have outgrown the free tier.',
     featured: true,
     features: [
-      'Everything in Free',
-      'Welcome messages: 30 per event',
-      'Dynamic images: 30',
-      'Automations: 250',
-      'Sticky messages: 200',
-      'Auto thread messages: 200',
+      'Everything in free',
+      'Higher limits',
+      'Shoutout in our discord',
     ],
   },
   {
@@ -45,6 +42,21 @@ const limits = [
   { feature: 'Automations', free: '50', paid: '250' },
   { feature: 'Sticky Messages', free: '30', paid: '200' },
   { feature: 'Auto Thread Messages', free: '30', paid: '200' },
+];
+
+const faqs = [
+  {
+    q: "Which server's limits will be increased when subscribing once?",
+    a: "Before subscribing, you choose what server you would like to connect to the subscription. You'll need a separate subscription for every server you need to increase limits in.",
+  },
+  {
+    q: 'What happens when my subscription expires?',
+    a: "Your limits will be set back to the default ones after your subscription expires. If you have exceeded the default limits without an active subscription, you won't be able to use those features until you have manually deleted items to get below the default limits again.",
+  },
+  {
+    q: 'How do I cancel my subscription',
+    a: 'Go into the premium tab of your server. Click on the red cancel button and we will cancel your current subscription and benefits will be removed at the end of the current billing period.',
+  },
 ];
 
 export default function LimitIncreasePage() {
@@ -84,7 +96,7 @@ export default function LimitIncreasePage() {
                     ))}
                   </ul>
                   <Link
-                    href="/invite"
+                    href="https://dash.emberbot.dev/premium/get_started"
                     className={`${p.featured ? 'button-primary button-accent' : 'button-secondary'} mt-7 w-full`}
                   >
                     Get started
@@ -97,34 +109,48 @@ export default function LimitIncreasePage() {
 
         <div className="relative isolate overflow-hidden bg-[#1c1f24]">
           <WaveEdge placement="top" />
-          <div className="relative z-10 mx-auto max-w-[88rem] overflow-x-auto px-5 py-20 sm:px-8 sm:py-24">
-            <table className="w-full min-w-[34rem] border-collapse text-left">
-              <caption className="sr-only">Ember limits on the Free plan compared with Max and Supporter</caption>
-              <thead>
-                <tr className="bg-white/[.03]">
-                  <th scope="col" className="px-6 py-4">
-                    <span className="sr-only">Feature</span>
-                  </th>
-                  <th scope="col" className="px-6 py-4 text-xs font-semibold uppercase tracking-[.12em] text-zinc-400">
-                    Free
-                  </th>
-                  <th scope="col" className="accent-text px-6 py-4 text-xs font-semibold uppercase tracking-[.12em]">
-                    Max/Supporter
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-white/[.06]">
-                {limits.map((row) => (
-                  <tr key={row.feature} className="transition hover:bg-white/[.02]">
-                    <th scope="row" className="px-6 py-5 text-base font-medium text-zinc-200">
-                      {row.feature}
+          <div className="relative z-10 mx-auto max-w-[88rem] px-5 py-20 sm:px-8 sm:py-24">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[34rem] border-collapse text-left">
+                <caption className="sr-only">Ember limits on the Free plan compared with Max and Supporter</caption>
+                <thead>
+                  <tr className="bg-white/[.03]">
+                    <th scope="col" className="px-6 py-4">
+                      <span className="sr-only">Feature</span>
                     </th>
-                    <td className="px-6 py-5 text-base text-zinc-400">{row.free}</td>
-                    <td className="px-6 py-5 text-base font-semibold text-white">{row.paid}</td>
+                    <th scope="col" className="px-6 py-4 text-xs font-semibold uppercase tracking-[.12em] text-zinc-400">
+                      Free
+                    </th>
+                    <th scope="col" className="accent-text px-6 py-4 text-xs font-semibold uppercase tracking-[.12em]">
+                      Max/Supporter
+                    </th>
                   </tr>
+                </thead>
+                <tbody className="divide-y divide-white/[.06]">
+                  {limits.map((row) => (
+                    <tr key={row.feature} className="transition hover:bg-white/[.02]">
+                      <th scope="row" className="px-6 py-5 text-base font-medium text-zinc-200">
+                        {row.feature}
+                      </th>
+                      <td className="px-6 py-5 text-base text-zinc-400">{row.free}</td>
+                      <td className="px-6 py-5 text-base font-semibold text-white">{row.paid}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="mx-auto mt-16 max-w-3xl">
+              <h2 className="text-3xl font-semibold tracking-[-0.035em] text-white">FAQ</h2>
+              <dl className="mt-6 border-t border-white/[.06]">
+                {faqs.map((faq) => (
+                  <div key={faq.q} className="border-b border-white/[.06] py-5">
+                    <dt className="text-base font-semibold text-white">{faq.q}</dt>
+                    <dd className="mt-2 text-sm leading-7 text-zinc-400">{faq.a}</dd>
+                  </div>
                 ))}
-              </tbody>
-            </table>
+              </dl>
+            </div>
           </div>
           <WaveEdge placement="bottom" />
         </div>
