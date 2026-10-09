@@ -64,8 +64,7 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-4 max-w-xs text-sm leading-6 text-zinc-400">
-            Discord moderation and utility, designed for communities that take
-            trust seriously.
+            The best all-in-one discord bot that your server has ever seen.
           </p>
         </div>
         {groups.map((g) => (
@@ -93,7 +92,7 @@ export function Footer() {
       </div>
       <div className="border-t border-white/[.06]">
         <div className="mx-auto flex max-w-[88rem] flex-col gap-2 px-5 py-6 text-xs text-zinc-500 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <p>© 2026 Ember. Built for better communities.</p>
+          <p>© 2026 Blueberryboom. </p>
         </div>
       </div>
     </footer>
