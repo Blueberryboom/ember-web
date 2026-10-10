@@ -29,7 +29,7 @@
 
 :root {
   color-scheme: dark;
-  --ember-bg: #a8a29e;
+  --ember-bg: #333333;
   --ember-line: rgb(255 255 255 / 0.08);
   --ember-text: #faf7f5;
   --ember-muted: #0b0908;
